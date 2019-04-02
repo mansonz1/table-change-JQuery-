@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .main{
+            border:1px solid black;
+            width:70px;
+            height:30px;
+            text-align:center;
+            line-height:30px;
+            float:left;
+            position:relative;
+            cursor:pointer;
+        }
+        .main:hover{
+            text-decoration: underline;
+            color:red;
+        }
+        img{
+            position:absolute;
+            display:none;
+            border:1px solid black
+        }
+
+    </style>
+
+</head>
+<script src="../jq.js"></script>
+<body>
+<div class="main">国际大牌
+
+    <div class="sub">
+        <img src="tab切换/guojidapai.jpg" alt="">
+    </div>
+</div>
+<div class="main">国妆名品
+<div class="sub">
+    <img src="tab切换/guozhuangmingpin.jpg" alt="">
+</div>
+</div>
+<div class="main">男士精品
+<div class="sub">
+    <img src="tab切换/nanshijingpin.jpg" alt="">
+</div>
+</div>
+<div class="main" >清洁用品
+<div class="sub">
+    <img src="tab切换/qingjieyongpin.jpg" alt="">
+</div>
+</div>
+</body>
+<script>
+    $(document).ready(function(){
+        $(".main").mouseenter(function(){
+            $("img").eq($(this).index()).show();
+            $(this).css("backgroundColor","lightgray").siblings(".main").css("backgroundColor","white")
+        });
+        $(".main").mouseleave(function(){
+            $("img").eq($(this).index()).hide();
+            $(this).css("backgroundColor","white");
+        });
+        /*$(".main").eq(1).mouseenter(function(){
+            $("img").eq(1).show();
+            $(this).css("backgroundColor","lightgray").siblings(".main").css("backgroundColor","white")
+        });
+        $(".main").eq(1).mouseleave(function(){
+            $("img").eq(1).hide();
+            $(this).css("backgroundColor","white");
+        });
+        $(".main").eq(2).mouseenter(function(){
+            $("img").eq(2).show();
+            $(this).css("backgroundColor","lightgray").siblings(".main").css("backgroundColor","white")
+        });
+        $(".main").eq(2).mouseleave(function(){
+            $("img").eq(2).hide();
+            $(this).css("backgroundColor","white");
+        });
+        $(".main").eq(3).mouseenter(function(){
+            $("img").eq(3).show();
+            $(this).css("backgroundColor","lightgray").siblings(".main").css("backgroundColor","white")
+        });
+        $(".main").eq(3).mouseleave(function(){
+            $("img").eq(3).hide();
+            $(this).css("backgroundColor","white");
+        });*/
+    })
+</script>
+</html>
